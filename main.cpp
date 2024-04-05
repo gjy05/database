@@ -223,7 +223,7 @@ Array *add_array(void)
         for (int i = 0; i < array->size; i++)
         {
             std::cout << "item[" << i << "]: ";
-            static_cast<Array *>(array->items)[i] = *static_cast<Array*>(add_array());
+            static_cast<Array *>(array->items)[i] = *static_cast<Array *>(add_array());
         }
     }
     else if (type == "int")

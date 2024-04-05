@@ -54,7 +54,7 @@ void remove(Database &database, std::string &key)
     {
         return;
     }
-    
+
     Entry **tmp = new Entry *[database.size - 1];
     for (int i = 0, j = 0; i < database.size; i++)
     {
@@ -102,7 +102,7 @@ void delete_array(Array *array) // 재귀적으로 Array 의 items 가 가리키
     switch (array->type)
     {
     case INT:
-        delete[] static_cast<int*>(array->items);
+        delete[] static_cast<int *>(array->items);
         break;
     case DOUBLE:
         delete[] static_cast<double *>(array->items);
