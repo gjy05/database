@@ -76,14 +76,13 @@ void remove(Database &database, std::string &key)
                 delete static_cast<Array *>(database.entries[i]->value);
                 break;
             }
-            delete database.entries[i];
         }
         else
         {
             tmp[j++] = database.entries[i];
         }
     }
-    delete database.entries;
+    delete[] database.entries;
     database.size--;
     database.entries = tmp;
 }
