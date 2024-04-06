@@ -83,6 +83,7 @@ void remove(Database &database, std::string &key)
             tmp[j++] = database.entries[i];
         }
     }
+    delete database.entries;
     database.size--;
     database.entries = tmp;
 }
@@ -112,7 +113,7 @@ void delete_array(Array *array) // 재귀적으로 Array 의 items 가 가리키
         break;
     case ARRAY:
         delete_array(static_cast<Array *>(array->items));
-        delete static_cast<Array *>(array->items);
+        delete[] static_cast<Array *>(array->items);
         break;
     }
 }
